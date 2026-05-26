@@ -1,0 +1,66 @@
+---
+import Layout from "../layout/Layout.astro";
+import Header from "../components/Header.astro";
+import Welcome from "../components/Welcome.astro";
+import Services from "../components/Services.astro";
+import Portfolio from "../components/Portfolio.astro";
+import Testimonials from "../components/Testimonials.astro";
+import About from "../components/About.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Ever Garces | Producción Audiovisual y Fotografía Profesional" description="Fotografía profesional, grabación de videos musicales y creación de contenido audiovisual para redes sociales, marcas, artistas y creadores digitales.">
+  <Header />
+  <main class="scroll-smooth">
+    <!-- Slider de videos -->
+    <section id="inicio" class="h-0 overflow-hidden p-0 m-0"></section>
+    <section id="reels" class="relative w-full bg-[#1F2C3A] mt-16 md:mt-20">
+      <div class="relative overflow-hidden">
+        <div id="slider-strip" class="flex transition-transform duration-300 ease-in-out will-change-transform" style="transform: translateX(0%);">
+          <article class="min-w-full shrink-0 basis-full">
+            <div class="relative w-full bg-black aspect-[16/9] md:aspect-[18/9] lg:aspect-[21/9]">
+              <video id="video-1" class="h-full w-full object-cover" preload="metadata" playsinline webkit-playsinline muted controls autoplay>
+                <source src="/VIDEOS/Video1.mp4" type="video/mp4" />
+                Tu navegador no soporta video HTML5.
+              </video>
+              <div class="pointer-events-none absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#2E3F51] shadow sm:left-4 sm:top-4 sm:text-xs sm:px-3 sm:py-1">Bodas</div>
+              
+            </div>
+          </article>
+          <article class="min-w-full shrink-0 basis-full">
+            <div class="relative w-full bg-black aspect-[16/9] md:aspect-[18/9] lg:aspect-[21/9]">
+              <video id="video-2" class="h-full w-full object-cover" preload="metadata" playsinline webkit-playsinline muted controls autoplay>
+                <source src="/VIDEOS/luisa.mp4" type="video/mp4" />
+                Tu navegador no soporta video HTML5.
+              </video>
+              <div class="pointer-events-none absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#2E3F51] shadow sm:left-4 sm:top-4 sm:text-xs sm:px-3 sm:py-1">Bodas</div>
+              
+            </div>
+          </article>
+        </div>
+        <div class="absolute bottom-2 sm:bottom-3 left-1/2 z-10 -translate-x-1/2 transform">
+          <div class="flex items-center gap-1.5 sm:gap-2">
+            <button class="slider-dot h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-white ring-1 ring-white/70 transition" aria-label="Ir al slide 1"></button>
+            <button class="slider-dot h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-white/40 ring-1 ring-white/50 transition hover:bg-white/70" aria-label="Ir al slide 2"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Welcome />
+    <Services />
+    <Portfolio />
+    <Testimonials />
+    <About />
+    <Contact />
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  import "../scripts/menu.js";
+  import "../scripts/slider.js";
+  import "../scripts/lightbox.js";
+</script>

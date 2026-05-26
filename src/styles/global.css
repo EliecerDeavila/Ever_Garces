@@ -1,0 +1,224 @@
+@import "tailwindcss";
+
+/* Fuentes personalizadas */
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/PlayfairDisplay-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/PlayfairDisplay-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/PlayfairDisplay-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/PlayfairDisplay-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-primary: #2E3F51;
+  --color-secondary: #577D8F;
+  --color-accent: #C7D8E4;
+  --color-bg: #F3EDEB;
+}
+
+/* Navegación */
+.nav-link {
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+}
+
+.nav-link.nav-active {
+  background-color: #C7D8E4 !important;
+  color: #2E3F51 !important;
+  border-color: rgba(255,255,255,.2) !important;
+}
+
+/* Sobre mí background */
+#sobre-mi {
+  background-color: #577D8F;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  #sobre-mi {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+/* ===================== Marquee Logos (Infinito) ===================== */
+.logo-marquee {
+  --speed: 28s;
+  --logo-h: 70px;
+  --gap: 48px;
+  height: 120px;
+}
+
+@media (max-width: 640px) {
+  .logo-marquee {
+    --logo-h: 100px;
+  }
+  .logo-marquee__img {
+    max-width: 150px;
+  }
+}
+
+@media (min-width: 640px) {
+  .logo-marquee {
+    height: 150px;
+  }
+}
+
+@media (min-width: 768px) {
+  .logo-marquee {
+    height: 180px;
+  }
+}
+
+.logo-marquee__mask {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 10%, #000 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 10%, #000 90%, transparent 100%);
+}
+
+.logo-marquee__track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: logo-marquee var(--speed) linear infinite;
+}
+
+.logo-marquee__group {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  padding-inline: var(--gap);
+}
+
+.logo-marquee__img {
+  height: var(--logo-h);
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  opacity: .85;
+  transition: filter .25s ease, opacity .25s ease, transform .25s ease;
+}
+
+.logo-marquee__img:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.logo-marquee:hover .logo-marquee__track {
+  animation-play-state: paused;
+}
+
+@keyframes logo-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee__track {
+    animation: none;
+    transform: none;
+  }
+}
+
+/* Efecto nombre shimmer */
+@keyframes nameShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.name-fx {
+  position: relative;
+  display: inline-block;
+  background-image: linear-gradient(90deg, #567fa1 0%, #C7D8E4 30%, #FFFFFF 50%, #C7D8E4 70%, #567fa1 100%);
+  background-size: 220% 100%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: nameShimmer 4.5s linear infinite;
+}
+
+.name-fx::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  -webkit-text-stroke: 1.2px rgba(46, 63, 81, 0.55);
+  pointer-events: none;
+}
+
+.name-fx::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  -webkit-text-stroke: 5px rgba(199, 216, 228, 0.22);
+  filter: blur(1px);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .name-shimmer, .name-fx {
+    animation: none;
+    background-position: 50% 50%;
+  }
+}
+
+#testi-strip {
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+}
+
+/* Slider videos */
+.aspect-16\/9 { aspect-ratio: 16/9; }
+.aspect-18\/9 { aspect-ratio: 18/9; }
+.aspect-21\/9 { aspect-ratio: 21/9; }
+.aspect-7\/16 { aspect-ratio: 7/16; }
+
+/* ===================== Scroll Reveal Animations ===================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

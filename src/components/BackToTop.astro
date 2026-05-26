@@ -1,0 +1,33 @@
+<button
+  id="back-to-top"
+  aria-label="Volver al inicio"
+  class="fixed bottom-6 left-6 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-[#2E3F51]/80 text-white shadow-lg backdrop-blur-sm transition-all duration-300 hover:bg-[#2E3F51] hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white/40 active:scale-95 opacity-0 pointer-events-none"
+>
+  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M18 15l-6-6-6 6" />
+  </svg>
+</button>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('back-to-top');
+    if (!btn) return;
+
+    const toggleVisibility = () => {
+      if (window.scrollY > 300) {
+        btn.classList.remove('opacity-0', 'pointer-events-none');
+        btn.classList.add('opacity-100', 'pointer-events-auto');
+      } else {
+        btn.classList.remove('opacity-100', 'pointer-events-auto');
+        btn.classList.add('opacity-0', 'pointer-events-none');
+      }
+    };
+
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
+    toggleVisibility();
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+</script>

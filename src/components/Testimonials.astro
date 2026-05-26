@@ -1,0 +1,132 @@
+---
+---
+<section id="testimonios" class="reveal min-h-[80vh] py-16 sm:py-20" style="background: linear-gradient(to bottom, #F3EDEB 35%, #577D8F 100%);">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mb-10 flex items-center justify-center gap-4 sm:gap-6">
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#2E3F51] leading-none min-w-0 text-center">TESTIMONIOS</h2>
+    </div>
+  </div>
+
+<div class="relative">
+  <div id="testi-slider" class="relative overflow-hidden" role="region" aria-roledescription="carrusel" aria-label="Testimonios" aria-live="polite">
+    <div id="testi-strip" class="flex gap-x-0 transition-transform duration-500 ease-out will-change-transform" style="transform: translateX(0%);">
+      <!-- Slide1 -->
+      <article class="testi-slide min-w-full flex-none basis-full">
+        <div class="px-3 sm:px-4">
+          <div class="mx-auto w-full max-w-[900px]">
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-6 rounded-xl bg-[#2E3F51]/95 p-6 sm:p-8 shadow-md">
+              <figure class="shrink-0">
+                <img src="/IMG/Tetimonios/avatar1.webp" alt="Foto de perfil de María F., cliente de bodas" width="130" height="130" class="h-[110px] w-[110px] sm:h-[120px] sm:w-[120px] md:h-[130px] md:w-[130px] rounded-full object-cover ring-2 ring-white/20" loading="lazy" decoding="async">
+              </figure>
+              <div class="flex-1 text-white">
+                <p class="text-[15px] sm:text-base leading-relaxed text-white/90">"Un trabajo increíble. Supo capturar exactamente la esencia de lo que queríamos transmitir. Profesionalismo y calidad de principio a fin."</p>
+                <div class="mt-5">
+                  <h3 class="text-lg font-serif">María F.</h3>
+                  <p class="text-sm text-white/70">Boda • Cartagena</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      
+      <!-- Slide 2 -->
+      <article class="testi-slide min-w-full flex-none basis-full">
+        <div class="px-3 sm:px-4">
+          <div class="mx-auto w-full max-w-[900px]">
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-6 rounded-xl bg-[#2E3F51]/95 p-6 sm:p-8 shadow-md">
+              <figure class="shrink-0">
+                <img src="/IMG/Tetimonios/avatar2.webp" alt="Foto de perfil de Luis M., cliente corporativo" width="130" height="130" class="h-[110px] w-[110px] sm:h-[120px] sm:w-[120px] md:h-[130px] md:w-[130px] rounded-full object-cover ring-2 ring-white/20" loading="lazy" decoding="async">
+              </figure>
+              <div class="flex-1 text-white">
+                <p class="text-[15px] sm:text-base leading-relaxed text-white/90">"La sesión fue muy amena y el material quedó increíble. Excelente manejo de luz y dirección durante toda la toma."</p>
+                <p class="font-serif mt-4 text-sm sm:text-base text-white/90">Luis M. <span class="text-white/60 font-medium">— Corporativo</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      
+      <!-- Slide 3 -->
+      <article class="testi-slide min-w-full flex-none basis-full">
+        <div class="px-3 sm:px-4">
+          <div class="mx-auto w-full max-w-[900px]">
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-6 rounded-xl bg-[#2E3F51]/95 p-6 sm:p-8 shadow-md">
+              <figure class="shrink-0">
+                <img src="/IMG/Tetimonios/avatar3.webp" alt="Foto de perfil de Camila P., cliente de producción musical" width="130" height="130" class="h-[110px] w-[110px] sm:h-[120px] sm:w-[120px] md:h-[130px] md:w-[130px] rounded-full object-cover ring-2 ring-white/20" loading="lazy" decoding="async">
+              </figure>
+              <div class="flex-1 text-white">
+                <p class="text-[15px] sm:text-base leading-relaxed text-white/90">"Buen trabajo y buena comunicación. La entrega fue rápida y el resultado final se ajustó a lo que necesitaba."</p>
+                <p class="font-serif mt-4 text-sm sm:text-base text-white/90">Camila P. <span class="text-white/60 font-medium">— Producción musical</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+  
+  <!-- Navigation buttons -->
+  <div class="absolute inset-y-0 flex items-center pointer-events-none">
+    <button id="testi-prev" class="left-0 flex items-center justify-center p-4 text-white/50 hover:text-white transition-colors pointer-events-auto z-10">
+      <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+        <path d="M15 18l-6-6 6-6"></path>
+      </svg>
+    </button>
+    <button id="testi-next" class="right-0 flex items-center justify-center p-4 text-white/50 hover:text-white transition-colors pointer-events-auto z-10">
+      <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+        <path d="M9 18l6-6-6-6"></path>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- Dots -->
+  <div class="mt-10 flex items-center justify-center gap-3">
+    <button class="testi-dot h-3 w-3 rounded-full bg-white/80 transition" aria-label="Ir al testimonio 1"></button>
+    <button class="testi-dot h-2.5 w-2.5 rounded-full bg-white/30 transition" aria-label="Ir al testimonio 2"></button>
+    <button class="testi-dot h-2.5 w-2.5 rounded-full bg-white/30 transition" aria-label="Ir al testimonio 3"></button>
+  </div>
+</div>
+
+  <!-- Clientes y Marcas -->
+  <div id="clientes" class="mt-12 py-10 sm:py-14">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-6 flex items-center justify-center">
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#2E3F51] leading-none min-w-0 text-center">CLIENTES Y MARCAS</h2>
+      </div>
+      <p class="mt-5 text-center text-md text-[#2E3F51]/70">Proyectos y colaboraciones que han dejado huella</p>
+      <br>
+      <!-- Carrusel -->
+      <div class="logo-marquee pt-2 w-full overflow-hidden rounded-2xl">
+        <div class="logo-marquee__mask h-full">
+          <div class="logo-marquee__track h-16 sm:h-20 md:h-24 flex items-center">
+            <div class="logo-marquee__group flex items-center gap-10">
+<img src="/IMG/clientes/santiago_cruz.webp" alt="Logo Santiago Cruz" class="logo-marquee__img">
+<img src="/IMG/clientes/AGM.webp" alt="Logo AGM Desarrollos" class="logo-marquee__img">
+<img src="/IMG/clientes/Disney.webp" alt="Logo Disney+" class="logo-marquee__img">
+<img src="/IMG/clientes/DisneyJr.webp" alt="Logo Disney Jr" class="logo-marquee__img mt-1">
+<img src="/IMG/clientes/Ecopetrol.svg" alt="Logo Ecopetrol" class="logo-marquee__img">
+<img src="/IMG/clientes/EncuentroCreativo.webp" alt="Logo Encuentro Creativo" class="logo-marquee__img">
+<img src="/IMG/clientes/RDV.webp" alt="Logo Rios De Vida" class="logo-marquee__img">
+<img src="/IMG/clientes/DeVida.webp" alt="Logo Casa Productora" class="logo-marquee__img">
+<img src="/IMG/clientes/Hm.webp" alt="Logo H&M" class="logo-marquee__img">
+            </div>
+            <div class="logo-marquee__group" aria-hidden="true">
+<img src="/IMG/clientes/santiago_cruz.webp" alt="Logo Santiago Cruz" class="logo-marquee__img">
+<img src="/IMG/clientes/AGM.webp" alt="Logo AGM Desarrollos" class="logo-marquee__img">
+<img src="/IMG/clientes/Disney.webp" alt="Logo Disney+" class="logo-marquee__img">
+<img src="/IMG/clientes/DisneyJr.webp" alt="Logo Disney Jr" class="logo-marquee__img mt-1">
+<img src="/IMG/clientes/Ecopetrol.svg" alt="Logo Ecopetrol" class="logo-marquee__img">
+<img src="/IMG/clientes/EncuentroCreativo.webp" alt="Logo Encuentro Creativo" class="logo-marquee__img">
+<img src="/IMG/clientes/RDV.webp" alt="Logo Rios de Vida" class="logo-marquee__img">
+<img src="/IMG/clientes/DeVida.webp" alt="Logo Casa Productora" class="logo-marquee__img">
+<img src="/IMG/clientes/Hm.webp" alt="Logo H&M" class="logo-marquee__img">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="/src/scripts/testimonials.js"></script>

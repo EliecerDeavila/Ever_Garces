@@ -1,0 +1,54 @@
+---
+---
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 w-full bg-[#2E3F51]/90 text-white backdrop-blur-sm transition-shadow">
+  <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
+    <!-- Logo -->
+    <svg class="h-11 w-auto text-white sm:h-12 md:h-14" viewBox="0 0 4500 4500" aria-label="Logo Ever Garces" role="img">
+      <use href="/IMG/sprite.svg#logo"></use>
+    </svg>
+
+    <!-- Botón hamburguesa (móvil) -->
+    <button id="btn-open-menu" class="inline-flex items-center justify-center rounded md:hidden focus:outline-none focus:ring-2 focus:ring-white/50" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-drawer" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 opacity-90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <!-- Menú escritorio -->
+    <nav class="hidden md:block">
+      <ul class="flex items-center gap-3">
+        <li><a href="#inicio" class="nav-link rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white/90 transition hover:bg-white/10">Inicio</a></li>
+<li><a href="#servicios" class="nav-link rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white/90 transition hover:bg-white/10">Servicios</a></li>
+<li><a href="#galeria" class="nav-link rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white/90 transition hover:bg-white/10">Galería</a></li>
+<li><a href="#testimonios" class="nav-link rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white/90 transition hover:bg-white/10">Testimonios</a></li>
+        <li><a href="#sobre-mi" class="nav-link rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white/90 transition hover:bg-white/10">Sobre mí</a></li>
+        <li><a href="#contacto" class="nav-link rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white/90 transition hover:bg-white/10">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Backdrop -->
+<div id="backdrop" class="fixed inset-0 z-40 hidden bg-black/40 md:hidden"></div>
+
+<!-- Drawer móvil -->
+<aside id="mobile-drawer" class="fixed inset-y-0 right-0 z-50 hidden w-72 translate-x-full bg-[#2E3F51] p-4 shadow-xl transition-transform duration-200 md:hidden" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+  <div class="mb-4 flex items-center justify-between">
+    <span class="text-sm tracking-wide text-[#C7D8E4]">MENÚ</span>
+    <button id="btn-close-menu" class="inline-flex items-center justify-center rounded focus:outline-none focus:ring-2 focus:ring-white/50" aria-label="Cerrar menú" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 opacity-90 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+  <nav>
+    <ul class="flex flex-col gap-2">
+      <li><a href="#inicio" class="nav-link block rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white/90">Inicio</a></li>
+      <li><a href="#servicios" class="nav-link block rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white/90">Servicios</a></li>
+      <li><a href="/#galeria" class="nav-link block rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white/90">Galería</a></li>
+      <li><a href="#testimonios" class="nav-link block rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white/90">Testimonios</a></li>
+      <li><a href="#sobre-mi" class="nav-link block rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white/90">Sobre mí</a></li>
+      <li><a href="#contacto" class="nav-link block rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white/90">Contacto</a></li>
+    </ul>
+  </nav>
+</aside>

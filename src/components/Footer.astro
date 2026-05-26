@@ -1,0 +1,118 @@
+---
+import { Mail, MapPin } from 'lucide-astro';
+
+const year = new Date().getFullYear();
+---
+<footer class="bg-[#1F2C3A] text-white w-full">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <!-- ====== GRID SUPERIOR ====== -->
+    <div class="grid gap-10 md:grid-cols-3">
+      <!-- Marca -->
+      <div>
+        <div class="flex items-center gap-3">
+          <svg class="h-10 w-auto text-white" viewBox="0 0 4500 4500" aria-label="Logo Ever Garces" role="img">
+            <use href="/IMG/sprite.svg#logo"></use>
+          </svg>
+          <div class="leading-tight">
+            <p class="font-serif text-lg font-semibold tracking-tight">Ever Garces</p>
+            <p class="text-xs text-white/70">Fotografía &amp; Producción Audiovisual</p>
+          </div>
+        </div>
+
+        <p class="mt-4 max-w-sm text-sm text-white/75 leading-relaxed">
+          Capturamos historias con estética cinematográfica y calidad profesional.
+          Bodas, corporativo, videoclips y contenido para redes.
+        </p>
+      </div>
+
+      <!-- Enlaces -->
+      <div class="grid gap-8 sm:grid-cols-2">
+        <div>
+          <h4 class="text-sm font-semibold uppercase tracking-wide text-white/90">Navegación</h4>
+          <ul class="mt-4 space-y-2 text-sm text-white/75">
+            <li><a href="#inicio" class="hover:text-white">Inicio</a></li>
+            <li><a href="#servicios" class="hover:text-white">Servicios</a></li>
+            <li><a href="#testimonios" class="hover:text-white">Testimonios</a></li>
+            <li><a href="#sobre-mi" class="hover:text-white">Sobre mí</a></li>
+            <li><a href="#contacto" class="hover:text-white">Contacto</a></li>
+             <li><a href="/#galeria" class="hover:text-white">Galería</a></li>
+          </ul>
+        </div>
+
+        <!-- CONTACTO -->
+        <div>
+          <h4 class="text-sm font-semibold uppercase tracking-wide text-white/90">Contacto</h4>
+          <ul class="mt-4 space-y-2.5 text-sm text-white/85">
+            <li class="grid grid-cols-[1.25rem_1fr] gap-3 items-start">
+              <Mail class="h-5 w-5 text-white/70" aria-hidden="true" />
+              <a href="mailto:evergarces.contact@gmail.com?subject=Ever%20me%20interesa%20tus%20servicios&body=Hola%2C%20mi%20nombre%20es%20%5BTu%20nombre%5D%20y%20quiero%20que%20me%20cotices%20%5BTu%20mensaje%5D" class="group inline-flex items-baseline gap-2 hover:text-white">Email</a>
+            </li>
+            <li class="grid grid-cols-[1.25rem_1fr] gap-3 items-start">
+              <svg class="h-5 w-5 text-white/70" aria-hidden="true">
+                <use href="/IMG/sprite.svg#whatsapp"></use>
+              </svg>
+              <a href="https://wa.me/573044849765?text=Hola%20estoy%20interesado%20en%20tus%20servicios%20mi%20nombre%20es%20" target="_blank" rel="noopener" class="group inline-flex items-baseline gap-2 hover:text-white">WhatsApp</a>
+            </li>
+            <li class="grid grid-cols-[1.25rem_1fr] gap-3 items-start">
+              <MapPin class="h-5 w-5 text-white/70" aria-hidden="true" />
+              <span>Cartagena de Indias, CO</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Redes -->
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-wide text-white/90">Sígueme</h4>
+        <p class="mt-4 text-sm text-white/75">
+          Mira trabajos recientes y detrás de cámaras en redes.
+        </p>
+
+        <div class="mt-5 flex items-center gap-3">
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/evergarcess/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="group inline-flex items-center justify-center h-10 w-10 rounded-full border border-white/15 bg-white/0 text-white/90 transition-all duration-200 hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-white/30 active:scale-95">
+            <svg class="h-5 w-5" aria-hidden="true">
+              <use href="/IMG/sprite.svg#instagram"></use>
+            </svg>
+            <span class="sr-only">Instagram</span>
+          </a>
+
+          <!-- TikTok -->
+          <a href="https://www.tiktok.com/@evergarcess" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="group inline-flex items-center justify-center h-10 w-10 rounded-full border border-white/15 bg-white/0 text-white/90 transition-all duration-200 hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-white/30 active:scale-95">
+            <svg class="h-5 w-5" aria-hidden="true">
+              <use href="/IMG/sprite.svg#tiktok"></use>
+            </svg>
+            <span class="sr-only">TikTok</span>
+          </a>
+
+          <!-- YouTube -->
+          <a href="https://www.youtube.com/@evergarcess" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="group inline-flex items-center justify-center h-10 w-10 rounded-full border border-white/15 bg-white/0 text-white/90 transition-all duration-200 hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-white/30 active:scale-95">
+            <svg class="h-5 w-5" aria-hidden="true">
+              <use href="/IMG/sprite.svg#youtube"></use>
+            </svg>
+            <span class="sr-only">YouTube</span>
+          </a>
+        </div>
+
+        <p class="mt-6 text-xs text-white/55">
+          *Respondo mensajes en horario laboral. Para urgencias, WhatsApp.
+        </p>
+      </div>
+    </div>
+    <!-- ====== /GRID SUPERIOR ====== -->
+
+    <!-- ====== BARRA INFERIOR ====== -->
+    <div class="mt-10">
+      <div class="border-t border-white/10"></div>
+      <div class="pt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <p class="text-xs text-white/55">
+          © {year} Ever Garces. Todos los derechos reservados.
+        </p>
+        <p class="text-xs text-white/55">
+          Diseñado y desarrollado con enfoque premium.
+        </p>
+      </div>
+    </div>
+    <!-- ====== /BARRA INFERIOR ====== -->
+  </div>
+</footer>

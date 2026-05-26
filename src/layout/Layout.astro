@@ -1,0 +1,24 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import BackToTop from "../components/BackToTop.astro";
+const { title, description, image = "/IMG/og-image.jpg" } = Astro.props;
+---
+<html lang="es">
+  <head>
+    <BaseHead title={title} description={description} image={image} />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/PlayfairDisplay-Regular.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/PlayfairDisplay-SemiBold.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/PlayfairDisplay-Bold.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/PlayfairDisplay-Black.woff2" crossorigin>
+  </head>
+  <body class="bg-[#F3EDEB]">
+    <slot />
+    
+    <BackToTop />
+    <WhatsAppButton />
+    <script>
+      import "../scripts/reveal.js";
+    </script>
+  </body>
+</html>

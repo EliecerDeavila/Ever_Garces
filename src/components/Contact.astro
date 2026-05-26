@@ -1,0 +1,213 @@
+---
+import { Mail, MapPin } from "lucide-astro";
+---
+
+<section
+  id="contacto"
+  class="reveal relative w-full px-4 py-20"
+  style="background: linear-gradient(to bottom, #577D8F 0%, #2E3F51 65%, #1F2C3A 100%);"
+>
+  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 md:py-20">
+    <div class="text-center">
+      <h2
+        class="font-serif text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white"
+      >
+        CONTACTO
+      </h2>
+      <p
+        class="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-white/80 leading-relaxed"
+      >
+        ¿Tienes un proyecto en mente? Cuéntame qué necesitas y te respondo lo
+        antes posible. <br />
+        Bodas, corporativo, videoclips y contenido para redes.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-8 md:grid-cols-2 md:gap-10">
+      <!-- Columna izquierda -->
+      <div
+        class="rounded-2xl bg-white/5 p-6 sm:p-8 ring-1 ring-white/10 backdrop-blur-sm"
+      >
+        <h3 class="text-lg sm:text-xl font-semibold text-white">
+          Hablemos por el canal que prefieras
+        </h3>
+        <p class="mt-3 text-sm sm:text-base text-white/80 leading-relaxed">
+          La forma más rápida es por WhatsApp. Si prefieres, también puedes
+          enviarme un correo o usar el formulario.
+        </p>
+
+        <div class="mt-8 space-y-4 text-sm text-white/80">
+          <div class="flex items-center gap-3">
+            <Mail class="h-5 w-5 text-white/60" />
+            <a
+              href="mailto:evergarces.contact@gmail.com?subject=Ever%20me%20interesa%20tus%20servicios&body=Hola%2C%20mi%20nombre%20es%20%5BTu%20nombre%5D%20y%20quiero%20que%20me%20cotices%20%5BTu%20mensaje%5D"
+              class="hover:text-white transition"
+              >Email
+            </a>
+          </div>
+          <div class="flex items-center gap-3">
+            <MapPin class="h-5 w-5 text-white/60" />
+            <span>Cartagena, Colombia</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna derecha: Formulario -->
+      <div
+        class="rounded-2xl bg-white/5 p-6 sm:p-8 ring-1 ring-white/10 backdrop-blur-sm"
+      >
+        <form id="contact-form" class="space-y-4">
+          <div>
+            <label
+              for="name"
+              class="block text-sm font-medium text-white/90 mb-1">Nombre</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              minlength="3"
+              class="w-full rounded-lg border border-white/20 bg-white/5 px-4 py-2.5 text-sm text-white placeholder-white/40 focus:border-[#C7D8E4] focus:outline-none focus:ring-1 focus:ring-[#C7D8E4]"
+              placeholder="Tu nombre"
+            />
+          </div>
+          <div>
+            <label
+              for="email"
+              class="block text-sm font-medium text-white/90 mb-1"
+              >Correo electrónico</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full rounded-lg border border-white/20 bg-white/5 px-4 py-2.5 text-sm text-white placeholder-white/40 focus:border-[#C7D8E4] focus:outline-none focus:ring-1 focus:ring-[#C7D8E4]"
+              placeholder="tu@email.com"
+            />
+          </div>
+          <div>
+            <label
+              for="service"
+              class="block text-sm font-medium text-white/90 mb-1"
+              >Servicio de interés</label
+            >
+            <select
+              id="service"
+              name="service"
+              class="w-full rounded-lg border border-white/20 bg-[#2E3F51] px-4 py-2.5 text-sm text-white focus:border-[#C7D8E4] focus:outline-none focus:ring-1 focus:ring-[#C7D8E4]"
+            >
+              <option value="">Selecciona un servicio</option>
+              <option value="bodas">Fotografía de bodas</option>
+              <option value="corporativo">Producción corporativa</option>
+              <option value="musical">Producción musical</option>
+              <option value="redes">Contenido para redes</option>
+            </select>
+          </div>
+          <div>
+            <label
+              for="message"
+              class="block text-sm font-medium text-white/90 mb-1"
+              >Mensaje</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              required
+              minlength="10"
+              class="w-full rounded-lg border border-white/20 bg-white/5 px-4 py-2.5 text-sm text-white placeholder-white/40 focus:border-[#C7D8E4] focus:outline-none focus:ring-1 focus:ring-[#C7D8E4]"
+              placeholder="Cuéntame qué necesitas..."></textarea>
+          </div>
+          <button
+            type="submit"
+            id="submit-btn"
+            class="w-full rounded-full bg-white px-5 py-3 text-xs sm:text-sm font-semibold uppercase tracking-wide text-[#2E3F51] shadow-sm transition hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/60"
+            >Enviar mensaje</button
+          >
+          <p
+            id="form-status"
+            class="text-center text-xs text-white/80 hidden"
+            aria-live="polite"
+          >
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contact-form");
+    const statusEl = document.getElementById("form-status");
+    const submitBtn = document.getElementById("submit-btn");
+
+    if (!form) return;
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      statusEl.classList.remove("hidden");
+      statusEl.textContent = "Enviando...";
+      submitBtn.disabled = true;
+      submitBtn.classList.add("opacity-60", "cursor-not-allowed");
+
+      const data = {
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        service: form.service.value,
+        message: form.message.value.trim(),
+      };
+
+      if (data.name.length < 3) {
+        statusEl.textContent = "El nombre debe tener al menos 3 caracteres.";
+        statusEl.classList.remove("hidden");
+        submitBtn.disabled = false;
+        submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
+        return;
+      }
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+        statusEl.textContent = "Ingresa un correo válido.";
+        submitBtn.disabled = false;
+        submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
+        return;
+      }
+
+      if (data.message.length < 10) {
+        statusEl.textContent = "El mensaje debe tener al menos 10 caracteres.";
+        submitBtn.disabled = false;
+        submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
+        return;
+      }
+
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+
+        const result = await res.json();
+
+        if (res.ok) {
+          statusEl.textContent = "¡Mensaje enviado! Te respondo pronto.";
+          statusEl.className = "text-center text-xs text-green-300";
+          form.reset();
+        } else {
+          statusEl.textContent =
+            result.error || "Error al enviar. Intenta de nuevo.";
+          statusEl.className = "text-center text-xs text-red-300";
+        }
+      } catch (err) {
+        statusEl.textContent = "Error de conexión. Escríbeme por WhatsApp.";
+        statusEl.className = "text-center text-xs text-red-300";
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
+      }
+    });
+  });
+</script>

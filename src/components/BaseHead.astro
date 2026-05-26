@@ -1,0 +1,22 @@
+---
+import "../styles/global.css";
+const { title, description, image } = Astro.props;
+const siteUrl = "https://evergarces.com";
+---
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content={description}>
+<meta name="keywords" content="fotografía profesional, producción audiovisual, grabación de videos musicales, creación de contenido para redes sociales, contenido audiovisual, videos musicales profesionales, fotografía comercial, videos promocionales, contenido visual para marcas" />
+
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={`${siteUrl}${Astro.url.pathname}`} />
+<meta property="og:image" content={`${siteUrl}${image}`} />
+
+<link rel="canonical" href={`${siteUrl}${Astro.url.pathname}`} />
+
+<title>{title}</title>
+<link rel="icon" href="/IMG/Logo.svg" type="image/svg+xml">
+

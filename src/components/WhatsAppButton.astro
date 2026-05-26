@@ -1,0 +1,18 @@
+---
+const phone = "573044849765";
+const message = encodeURIComponent(
+  "Hola estoy interesado en tus servicios mi nombre es "
+);
+---
+
+<a
+  href={`https://wa.me/${phone}?text=${message}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="WhatsApp"
+  class="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-[#2E3F51]/80 text-white shadow-lg backdrop-blur-sm transition-all duration-300 hover:bg-[#2E3F51] hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white/40 active:scale-95"
+>
+  <svg class="h-5 w-5" viewBox="0 0 360 362" fill="none" aria-hidden="true">
+    <use href="/IMG/sprite.svg#whatsapp"></use>
+  </svg>
+</a>
