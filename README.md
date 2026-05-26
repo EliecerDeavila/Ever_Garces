@@ -44,6 +44,10 @@ npm run start
 
 El sitio se sirve en `http://localhost:4321` por defecto.
 
+> **Nota**: Con `@astrojs/netlify`, el build produce una serverless function (no un servidor Node standalone).  
+> Para desarrollo local usa `npm run dev`.  
+> Para previsualizar el build de producción localmente, instala `netlify-cli` y ejecuta `npx netlify dev`.
+
 ## 📁 Estructura del Proyecto
 
 ```
